@@ -18,6 +18,8 @@ public:
 
     virtual bool init();
 
+    void onClickMenu(Ref *pSender);
+
 };
 
 

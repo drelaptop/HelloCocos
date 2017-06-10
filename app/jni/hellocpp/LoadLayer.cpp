@@ -16,5 +16,7 @@ bool LoadLayer::init() {
 }
 
 void LoadLayer::onScheduleOnce(float dt) {
+    CCLOG("LoadLayer::onScheduleOnce,Param value:%f", dt);
     this->pSM->goOpenScene();
+    CCLOG("onScheduleOnce called");
 }
