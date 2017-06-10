@@ -21,14 +21,17 @@ LOCAL_MODULE_FILENAME := libMyGame
 
 
 #新方式,直接获取目录下的所有cpp文件
-MY_CPP_LIST := $(wildcard $(LOCAL_PATH)/../../../Classes/*.cpp)
-LOCAL_SRC_FILES := hellocpp/main.cpp \
-LOCAL_SRC_FILES += $(MY_CPP_LIST:$(LOCAL_PATH)/%=%)
+#MY_CPP_LIST := $(wildcard $(LOCAL_PATH)/../../../Classes/*.cpp)
+#LOCAL_SRC_FILES := hellocpp/main.cpp \
+#LOCAL_SRC_FILES += $(MY_CPP_LIST:$(LOCAL_PATH)/%=%)
 
-# 输出变量值 不可用?
-# $(warning $(LOCAL_SRC_FILES))
+#LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
+#移动源码文件目录
+MY_CPP_LIST := $(wildcard $(LOCAL_PATH)/hellocpp/*.cpp)
+LOCAL_SRC_FILES := $(MY_CPP_LIST:$(LOCAL_PATH)/%=%)
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/hellocpp
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END
