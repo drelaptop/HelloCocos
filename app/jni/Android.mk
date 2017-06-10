@@ -11,9 +11,22 @@ LOCAL_MODULE := MyGame_shared
 
 LOCAL_MODULE_FILENAME := libMyGame
 
+#初始提供的方式,需要声明每一个文件
+#LOCAL_SRC_FILES := hellocpp/main.cpp \
+#                    ../../../Classes/AppDelegate.cpp \
+#                    ../../../Classes/LoadLayer.cpp \
+#                    ../../../Classes/OpenLayer.cpp \
+#                    ../../../Classes/ClockLayer.cpp \
+#                    ../../../Classes/SceneManager.cpp \
+
+
+#新方式,直接获取目录下的所有cpp文件
+MY_CPP_LIST := $(wildcard $(LOCAL_PATH)/../../../Classes/*.cpp)
 LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../../Classes/AppDelegate.cpp \
-                   ../../../Classes/HelloWorldScene.cpp
+LOCAL_SRC_FILES += $(MY_CPP_LIST:$(LOCAL_PATH)/%=%)
+
+# 输出变量值 不可用?
+# $(warning $(LOCAL_SRC_FILES))
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
 
