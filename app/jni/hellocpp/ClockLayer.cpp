@@ -47,6 +47,7 @@ void ClockLayer::onTimeChange(float dt) {
     this->setTimeRotation();
 }
 
+//根据当前时间设置指针角度
 void ClockLayer::setTimeRotation() const {
     //初始指针指向
     struct timeval now;
