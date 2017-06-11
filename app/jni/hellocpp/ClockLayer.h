@@ -12,11 +12,20 @@ USING_NS_CC;
 
 class ClockLayer : public Layer {
 public:
+    Sprite *hourS = nullptr;
+    Sprite *minuteS = nullptr;
+    Sprite *secondS = nullptr;
     SceneManager *pSM = nullptr;
 public:
     CREATE_FUNC(ClockLayer);
 
     virtual bool init();
+
+    void onTimeChange(float dt);
+
+    void onClickBack(Ref *pSender);
+
+    void setTimeRotation() const;
 };
 
 

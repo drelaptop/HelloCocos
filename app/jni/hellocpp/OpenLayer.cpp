@@ -13,12 +13,12 @@ bool OpenLayer::init() {
     gameLabel->setPosition(origin.x + viewSize.width / 2, origin.y + viewSize.height * 4 / 5);
     this->addChild(gameLabel, 0);
     //添加菜单
-    auto startLabel = Label::createWithTTF("start", "fonts/Marker Felt.ttf", 36);
+    auto startLabel = Label::createWithTTF("START", "fonts/Marker Felt.ttf", 36);
     auto menuStartItem = MenuItemLabel::create(startLabel, CC_CALLBACK_1(OpenLayer::onClickMenu, this));
     menuStartItem->setPosition(origin.x + viewSize.width / 2, origin.y + viewSize.height * 2 / 5);
     menuStartItem->setTag(1001);
 
-    auto exitLabel = Label::createWithTTF("exit", "fonts/Marker Felt.ttf", 36);
+    auto exitLabel = Label::createWithTTF("EXIT", "fonts/Marker Felt.ttf", 36);
     auto menuExitItem = MenuItemLabel::create(exitLabel, CC_CALLBACK_1(OpenLayer::onClickMenu, this));
     menuExitItem->setPosition(origin.x + viewSize.width / 2, origin.y + viewSize.height / 5);
     menuExitItem->setTag(1002);
